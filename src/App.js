@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.css';
-import AddTodo from './components/AddTodo';
+import AddTodo from './containers/AddTodo';
 import TodoList from './containers/TodoList';
 import {Provider} from 'react-redux';
 import store from './store/store'
@@ -16,9 +16,7 @@ function App() {
             <TodoList />
           </div>
           <div className="col-md-5">
-            <AddTodo 
-              agregarTarea={ (tarea) => {console.log(tarea)} }
-            />
+            <AddTodo />
           </div>
         </div>
       </main>
