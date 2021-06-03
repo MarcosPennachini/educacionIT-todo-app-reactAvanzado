@@ -4,18 +4,8 @@ import {createStore} from 'redux'
 const defaultData = {
     tareas: [
         {
-            id: 1,
+            id: Date.now(),
             name: "Estudiar React",
-            done: false
-        },
-        {
-            id: 2,
-            name: "Aprender Redux",
-            done: false
-        },
-        {
-            id: 3,
-            name: "Conseguir trabajo",
             done: false
         }
     ]
