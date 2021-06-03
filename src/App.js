@@ -1,27 +1,28 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import AddTodo from './components/AddTodo';
-import TodoList from './components/TodoList';
-import {defaultData} from './store/store'
+import TodoList from './containers/TodoList';
+import {Provider} from 'react-redux';
+import store from './store/store'
 
 function App() {
   return (
-    <>
+    <Provider store={store}>
       <header className="alert alert-primary">
         <h1>Todo list</h1>
       </header>
       <main className="container text-center">
         <div className="row">
           <div className="col-md-7">
-            <TodoList 
-              tareas={defaultData.tareas}
-            />
+            <TodoList />
           </div>
           <div className="col-md-5">
-            <AddTodo />
+            <AddTodo 
+              agregarTarea={ (tarea) => {console.log(tarea)} }
+            />
           </div>
         </div>
       </main>
-    </>
+    </Provider>
   );
 }
 

@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 
-const AddTodo = (agregarTarea) => {
+const AddTodo = ({agregarTarea}) => {
 
     const [tarea, setTarea] = useState('');
-    
+
     return (
-        <form onSubmit={ () => agregarTarea(tarea)}>
+        <form onSubmit={ (e) => {
+            e.preventDefault();
+            agregarTarea(tarea)
+            setTarea('')
+        }}>
             <div className="form-group">
                 <input 
                     type="text" 
