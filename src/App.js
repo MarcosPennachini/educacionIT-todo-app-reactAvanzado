@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import AddTodo from './components/AddTodo';
+import TodoList from './components/TodoList';
+import {defaultData} from './store/store'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header className="alert alert-primary">
+        <h1>Todo list</h1>
       </header>
-    </div>
+      <main className="container text-center">
+        <div className="row">
+          <div className="col-md-7">
+            <TodoList 
+              tareas={defaultData.tareas}
+            />
+          </div>
+          <div className="col-md-5">
+            <AddTodo />
+          </div>
+        </div>
+      </main>
+    </>
   );
 }
 
