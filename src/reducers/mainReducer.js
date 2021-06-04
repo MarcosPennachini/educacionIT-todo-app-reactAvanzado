@@ -5,6 +5,12 @@ const mainReducer = (state = {}, action) => {
 
     switch (action.type){
 
+        case t.ACT_FETCH_TODO:
+            return {
+                ...state,
+                tareas: action.payload
+            }
+
         case t.ACT_NEW_TODO:
             // return Object.assign({}, state, {
             //     tareas: [
@@ -20,7 +26,7 @@ const mainReducer = (state = {}, action) => {
                 tareas: [
                     ...state.tareas,
                     {
-                        id: Date.now(),
+                        id: state.tareas.lenght + 1,
                         name: action.payload,
                         done: false
                     }

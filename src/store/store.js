@@ -1,14 +1,14 @@
 import mainReducer from '../reducers/mainReducer'
-import {createStore} from 'redux'
+import {createStore, applyMiddleware} from 'redux'
+//import {logMiddleware} from '../middlewares/logMiddleware'
+//import { delayMiddleware } from '../middlewares/delayMiddleware';
 
 const defaultData = {
     tareas: [
-        {
-            id: Date.now(),
-            name: "Estudiar React",
-            done: false
-        }
+        
     ]
 }
 
-export default createStore(mainReducer, defaultData);
+const reduxConsole = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+
+export default createStore(mainReducer, defaultData, reduxConsole);

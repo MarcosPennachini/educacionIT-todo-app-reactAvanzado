@@ -3,6 +3,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 class TodoList extends Component {
 
+    componentDidMount() {
+        this.props.getTodos();
+    }
+
     render() { 
         return ( 
             <ul className="list-group">
