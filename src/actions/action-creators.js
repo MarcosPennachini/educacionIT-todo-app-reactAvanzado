@@ -6,3 +6,21 @@ export const actNewTodo = (name) => {
         payload: name
     }
 }
+
+export const actFetchTodos = () => {
+    return {
+        type: types.ACT_FETCH_TODO,
+        payload: [
+            {
+                id: 1,
+                name: "Estudiar React",
+                done: false
+            },
+            {
+                id: 2,
+                name: "Estudiar React Avanzado",
+                done: false
+            }
+        ]
+    }
+}
