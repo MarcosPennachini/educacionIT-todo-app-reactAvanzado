@@ -1,13 +1,13 @@
-import AddTodo from '../components/AddTodo'
-import {connect} from 'react-redux'
-import * as action_creators from '../actions/action-creators'
+import AddTodo from '../components/AddTodo';
+import { connect } from 'react-redux';
+import { actNewTodo } from '../actions/action-creators';
 
 function mapDispatchToProps(dispatch) {
-    return {
-        agregarTarea: (name) => {
-            dispatch(action_creators.actNewTodo(name))
-        }
-    }
+  return {
+    agregarTarea: (name) => {
+      dispatch(actNewTodo(name));
+    },
+  };
 }
 
-export default connect(null, mapDispatchToProps)(AddTodo)
+export default connect(null, mapDispatchToProps)(AddTodo);

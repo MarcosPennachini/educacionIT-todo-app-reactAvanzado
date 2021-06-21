@@ -1,17 +1,19 @@
-import TodoList from '../components/TodoList'
-import {connect} from 'react-redux'
-import * as action_creators from '../actions/action-creators'
+import TodoList from '../components/TodoList';
+import { connect } from 'react-redux';
+import { actFetchTodos } from '../actions/action-creators';
 
-function mapStateToProps(state){
-    return {
-        tareas: state.tareas
-    }
+function mapStateToProps(state) {
+  return {
+    tareas: state.tareas,
+  };
 }
 
-function mapDispatchToProps(dispatch){
-    return {
-        getTodos: () => {dispatch(action_creators.actFetchTodos())}
-    }
+function mapDispatchToProps(dispatch) {
+  return {
+    getTodos: () => {
+      dispatch(actFetchTodos());
+    },
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
